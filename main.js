@@ -79,17 +79,24 @@ fillTasks();
 // Add task button
 document.getElementById("add").addEventListener("click", () => {
   title_Name = prompt("Add new task : ");
-  let now = new Date();
-  let add_date =
-    now.getDate() + "/" + eval(now.getMonth() + 1) + "/" + now.getFullYear();
-  let o = {
-    title: title_Name,
-    date: add_date,
-    isDone: false,
-  };
-  tasks.push(o);
-  storeTasks();
-  fillTasks();
+  if (title_Name != null) {
+      let now = new Date();
+      let add_date =
+        now.getDate() +
+        "/" +
+        eval(now.getMonth() + 1) +
+        "/" +
+        now.getFullYear();
+      let o = {
+        title: title_Name,
+        date: add_date,
+        isDone: false,
+      };
+      tasks.push(o);
+      storeTasks();
+      fillTasks();
+  }
+
 });
 
 //delete task button
